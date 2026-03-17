@@ -1,0 +1,8 @@
+@import "tailwindcss";
+body,html{
+  user-select: none;
+}
+.line-green {
+  text-decoration: line-through;
+  text-decoration-color: rgb(173, 173, 173);
+}
