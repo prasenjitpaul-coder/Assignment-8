@@ -19,16 +19,16 @@ function App() {
     // fetch(`http://localhost:4000/search?q=${query}`)
     // .then(res => res.json())
     // .then(data => setResult(data));
-    const res = await fetch(`http://localhost:4000/api/task/search?q=${query}`);
+    const res = await fetch(`https://assignment-8-vone.onrender.com/api/task/search?q=${query}`);
     const data = await res.json();
     setResult(data);
   };
 
-  const { data, err, setreload } = useFetch("http://localhost:4000/api/task");
+  const { data, err, setreload } = useFetch("https://assignment-8-vone.onrender.com/api/task");
   /// toggle
   const toggleline = async (id, complete) => {
     console.log("hi");
-    await fetch("http://localhost:4000/api/task/" + id, {
+    await fetch("https://assignment-8-vone.onrender.com/api/task/" + id, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -49,7 +49,7 @@ function App() {
 
       setEdit(Edit);
 
-      await fetch("http://localhost:4000/api/task/" + id, {
+      await fetch("https://assignment-8-vone.onrender.com/api/task/" + id, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -72,7 +72,7 @@ function App() {
   const handelCreate = async () => {
     if (!task.trim()) return;
 
-    await fetch("http://localhost:4000/api/task", {
+    await fetch("https://assignment-8-vone.onrender.com/api/task", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -83,7 +83,7 @@ function App() {
     setreload((prev) => !prev);
   };
   const handelDel = async (id) => {
-    await fetch("http://localhost:4000/api/task/" + id, {
+    await fetch("https://assignment-8-vone.onrender.com/api/task/" + id, {
       method: "delete",
       headers: {
         "Content-Type": "application/json",
